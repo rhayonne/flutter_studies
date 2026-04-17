@@ -19,15 +19,9 @@ class HomePageStates extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home  Page'),
         backgroundColor: const Color.fromARGB(255, 255, 0, 0),
+        actions: [CustomSwitcher()],
       ),
-      body: Center(
-        child: Switch(
-          value: AppController.instance.isDarkTheme,
-          onChanged: (value) {
-            AppController.instance.changTheme();
-          },
-        ),
-      ),
+      body: Center(child: CustomSwitcher()),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
@@ -36,6 +30,20 @@ class HomePageStates extends State<HomePage> {
           });
         },
       ),
+    );
+  }
+}
+
+class CustomSwitcher extends StatelessWidget {
+  const CustomSwitcher({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: AppController.instance.isDarkTheme,
+      onChanged: (value) {
+        AppController.instance.changTheme();
+      },
     );
   }
 }
