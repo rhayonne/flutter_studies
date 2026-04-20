@@ -53,10 +53,14 @@ class _LoginPageState extends State<LoginPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (email == 'a@a.com' && password == '123') {
+                      // Rotas automaticas - Depois de nomea-las no app_widget
+                      Navigator.of(context).pushReplacementNamed('/home');
+
+                      // Rotas manuais
                       // Navegar e remplacer a tela nao, tera botao voltar
-                      Navigator.of(context).pushReplacement(
+                      /* Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (context) => HomePage()),
-                      );
+                      );*/
 
                       // se eu quero abrir uma nova pagina com o botao voltar
                       /* Navigator.of(context).push(
