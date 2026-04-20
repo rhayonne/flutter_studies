@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_word/app_controller.dart';
-import 'package:hello_word/home_page.dart';
+import 'package:hello_word/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: HomePage(),
+          home: LoginPage(),
         );
       },
     );
