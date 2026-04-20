@@ -14,6 +14,7 @@ class HomePageStates extends State<HomePage> {
   @override
   int counter = 0;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -21,7 +22,7 @@ class HomePageStates extends State<HomePage> {
         backgroundColor: const Color.fromARGB(255, 255, 0, 0),
         actions: [CustomSwitcher()],
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(
