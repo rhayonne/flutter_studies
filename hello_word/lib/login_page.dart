@@ -47,57 +47,79 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               SizedBox(height: 15),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 12,
+                    right: 12,
+                    top: 20,
+                    bottom: 12,
+                  ),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (value) {
+                          email = value;
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.email, color: Colors.green),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        onChanged: (value) {
+                          password = value;
+                        },
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(
+                            Icons.password_rounded,
+                            color: Colors.green,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      ElevatedButton.icon(
+                        icon: Icon(Icons.send),
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.black, //cor do texto
+                          side: BorderSide(
+                            color: const Color.fromARGB(255, 165, 162, 162),
+                            // style: BorderStyle.none,
+                            width: 0.01,
+                          ), // cord da borda
+                          backgroundColor: Colors.white, //cor de fundo do botao
+                          elevation: 3,
+                        ),
+                        onPressed: () {
+                          if (email == 'a@a.com' && password == '123') {
+                            // Rotas automaticas - Depois de nomea-las no app_widget
+                            Navigator.of(context).pushReplacementNamed('/home');
 
-              // Image.network(
-              //   'https://images.unsplash.com/photo-1680355466468-bd0a68b11fa0?q=80&w=2630&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              //   width: 50,
-              //   height: 50,
-              // ),
-              TextField(
-                onChanged: (value) {
-                  email = value;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.email, color: Colors.green),
-                ),
-              ),
-              SizedBox(height: 10),
-              TextField(
-                onChanged: (value) {
-                  password = value;
-                },
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
-                  prefixIcon: Icon(Icons.password, color: Colors.green),
-                ),
-              ),
-              SizedBox(height: 15),
-              ElevatedButton(
-                onPressed: () {
-                  if (email == 'a@a.com' && password == '123') {
-                    // Rotas automaticas - Depois de nomea-las no app_widget
-                    Navigator.of(context).pushReplacementNamed('/home');
-
-                    // Rotas manuais
-                    // Navegar e remplacer a tela nao, tera botao voltar
-                    /* Navigator.of(context).pushReplacement(
+                            // Rotas manuais
+                            // Navegar e remplacer a tela nao, tera botao voltar
+                            /* Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (context) => HomePage()),
                       );*/
 
-                    // se eu quero abrir uma nova pagina com o botao voltar
-                    /* Navigator.of(context).push(
+                            // se eu quero abrir uma nova pagina com o botao voltar
+                            /* Navigator.of(context).push(
                          MaterialPageRoute(builder: (context) => HomePage()),
                        );*/
-                  } else {
-                    print('Login ou senha errados');
-                  }
-                },
-                child: Text('Entrar'),
+                          } else {
+                            print('Login ou senha errados');
+                          }
+                        },
+                        label: Text('Entrar'),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
