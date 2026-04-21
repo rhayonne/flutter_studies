@@ -99,7 +99,9 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           if (email == 'a@a.com' && password == '123') {
                             // Rotas automaticas - Depois de nomea-las no app_widget
-                            Navigator.of(context).pushReplacementNamed('/home');
+                            Navigator.of(
+                              context,
+                            ).pushReplacementNamed('/home', arguments: email);
 
                             // Rotas manuais
                             // Navegar e remplacer a tela nao, tera botao voltar

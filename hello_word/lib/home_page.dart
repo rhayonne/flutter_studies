@@ -16,7 +16,34 @@ class HomePageStates extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final String emailLogin =
+        (ModalRoute.of(context)?.settings.arguments as String?) ?? 'Email';
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: Image.network(
+                'https://plus.unsplash.com/premium_vector-1719858611039-66c134efa74d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              ),
+              accountName: Text('Rhay'),
+              accountEmail: Text(emailLogin),
+            ),
+            ListTile(
+              title: Text('Inicio'),
+              subtitle: Text('Tela de inicio'),
+              leading: Icon(Icons.home),
+              onTap: () => {print('home')},
+            ),
+            ListTile(
+              title: Text('Logout'),
+              subtitle: Text('Sair'),
+              leading: Icon(Icons.logout),
+              onTap: () => {Navigator.of(context).pushReplacementNamed('/')},
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text('Home  Page'),
         backgroundColor: const Color.fromARGB(255, 255, 0, 0),
