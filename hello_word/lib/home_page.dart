@@ -16,6 +16,7 @@ class HomePageStates extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //recebendo o email do contexto
     final String emailLogin =
         (ModalRoute.of(context)?.settings.arguments as String?) ?? 'Email';
     return Scaffold(

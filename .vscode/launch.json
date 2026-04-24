@@ -20,12 +20,12 @@
         "chrome"
       ]
     },
-    {
-      "name": "Flutter: Android (Release)",
-      "cwd": "hello_word",
-      "request": "launch",
-      "type": "dart",
-      "deviceId": "flutter_emulator_2"
-    }
+    // {
+    //   "name": "Flutter: Android (Release)",
+    //   "cwd": "hello_word",
+    //   "request": "launch",
+    //   "type": "dart",
+    //   "deviceId": "flutter_emulator_2"
+    // }
   ]
 }
